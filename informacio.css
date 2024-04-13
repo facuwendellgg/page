@@ -1,0 +1,111 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(78, 134, 117);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para que el texto sea legible */
+}
+
+.logo {
+    font-size: 2.3rem;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+}
+
+.navegacion {
+    display: flex;
+}
+
+.navegacion a {
+    position: relative;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navegacion a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -6px;
+    left: 0;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s;
+}
+
+.navegacion a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.navegacion .btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.navegacion .btn:hover {
+    background: #fff;
+    color: #090f1d;
+}
+
+.contenedor-informacion {
+    padding: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+    opacity: 0; /* Inicialmente oculto */
+    animation: aparecer 1s forwards; /* Animación de aparición */
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Desplazar hacia arriba */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Volver a la posición original */
+    }
+}
+
+footer {
+    background-color: #000000;
+    top: 100%;
+    left: 100%;
+    color: #fffdfd;
+    text-align: center;
+    padding: 20px 0;
+}
